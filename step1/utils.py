@@ -1,12 +1,16 @@
 from tqdm import tqdm
 import torch
 import matplotlib.pyplot as plt
-
+SEED = 1
 ## function to check if GPU is available and return relevant device
 def get_device():
     cuda = torch.cuda.is_available()
     print("CUDA Available?", cuda)
-    return torch.device("cuda" if cuda else "cpu")    
+    # For reproducibility
+    torch.manual_seed(SEED)
+    if cuda:
+        torch.cuda.manual_seed(SEED)
+    return cuda, torch.device("cuda" if cuda else "cpu")    
 
 ## Return prediction count based on model prediction and target
 def GetCorrectPredCount(pPrediction, pLabels):
