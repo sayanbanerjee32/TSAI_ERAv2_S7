@@ -1,3 +1,7 @@
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
 class Net(nn.Module):
     def __init__(self, n = 4):
         super(Net, self).__init__()
@@ -80,5 +84,5 @@ class Net(nn.Module):
         x = self.convblock7(x)
 
         x = x.squeeze()
-        # view(-1, 10)
+
         return F.log_softmax(x, dim=-1)
