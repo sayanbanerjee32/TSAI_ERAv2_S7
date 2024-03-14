@@ -83,10 +83,11 @@ class Net(nn.Module):
         x = self.convblock4(x)
         x = self.convblock5(x)
         x = self.convblock6(x)
- 
+
         x = self.gap(x)
         x = self.convblock7(x)
 
         x = x.squeeze()
 
         return F.log_softmax(x, dim=-1)
+        
