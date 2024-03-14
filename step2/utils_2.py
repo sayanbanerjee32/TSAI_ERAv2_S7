@@ -153,7 +153,6 @@ def get_individual_loss(model, device, data_loader, criterion):
 
 
     return loss_list
-
 # the following function will plot images with target and predicted values
 # where prediction is wrong - this will be in order or decreasing loss
 # group by target
@@ -164,12 +163,20 @@ def plot_top_loss(model, device, data_loader, criterion, max_item = 5):
     incorrect_df = loss_df[loss_df.prediction != loss_df.target]
     print(f"total wrong predictions: {incorrect_df.shape[0]}")
 
+    incr_groups = incorrect_df.groupby(['target','prediction']).agg({'loss':'median',
+                                                             'image':'count'}).reset_index().sort_values(by='image', ascending=False)
+
     incorrect_df = incorrect_df.sort_values(by='loss', ascending=False)
+    
     for t in incorrect_df.target.unique():
         t_img_df = incorrect_df.loc[incorrect_df.target == t].copy()
         num_img = max_item if t_img_df.shape[0] > max_item else t_img_df.shape[0]
         print(f'target: {t}, num_img: {num_img}')
         for i, row in t_img_df.head(num_img).iterrows():
+            plt.figure(figsize=(2, 2))
             plt.imshow(row['image'].numpy().reshape(28,28), cmap='gray')
             plt.title(f'target: {row["target"]}, prediction: {row["prediction"]}, loss: {round(row["loss"],2)}')
+            plt.axis('off')
             plt.show()
+
+    return incr_groups
