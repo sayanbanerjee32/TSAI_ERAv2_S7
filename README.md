@@ -11,6 +11,7 @@
 The assignment is done in 4 steps including the initial step to create the basic structure of code and model skeleton for training and testing iteratively.
 
 ### Step 0 - Basic set-up
+[Go to the Step 0 notebook](https://github.com/sayanbanerjee32/TSAI_ERAv2_S7/blob/main/step0/S7_step0_SayanBanerjee.ipynb)  
 #### Target:
 - Complete initial set-up
   - Set Transforms
@@ -32,6 +33,7 @@ The assignment is done in 4 steps including the initial step to create the basic
 
 
 ### Step 1 - Lighter model with BatchNorm
+[Go to the Step 1 notebook](https://github.com/sayanbanerjee32/TSAI_ERAv2_S7/blob/main/step1/S7_step1_SayanBanerjee.ipynb)  
 #### Target:
 - Make the model lighter - as much as possible
 - Add Batch-norm to increase model efficiency.
@@ -47,6 +49,7 @@ The assignment is done in 4 steps including the initial step to create the basic
 - If model capacity increased (i.e. increased number of parameters), the model has capability to achieve 99.4% accuracy on test set.
 
 ### Step 2 - Regularise and add capacity
+[Go to the Step 2 notebook](https://github.com/sayanbanerjee32/TSAI_ERAv2_S7/blob/main/step2/S7_step2_SayanBanerjee.ipynb)  
 #### Target:
 - Add Regularization - Dropout
 - Start transition block at receptive field 5
@@ -69,6 +72,7 @@ See examples below:
 
 
 ### Step 3 - Image Augmentation and Learning rate tuning
+[Go to the Step 3 notebook](https://github.com/sayanbanerjee32/TSAI_ERAv2_S7/blob/main/step3/S7_step3_SayanBanerjee.ipynb)  
 #### Target:
 - Add image augmentation and trial with different combinations of augmentation to reduce errors identified in the last step
 - Add learning rate scheduler so that learning rate can be decreased when the loss gets plateaued
