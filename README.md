@@ -1,4 +1,4 @@
-# TSAI_ERAv2_S7
+# Vision Modelling steps
 
 ## Objective
 - Achieving test accuracy of 99.4% (this must be consistently shown in last few epochs, and not a one-time achievement)
